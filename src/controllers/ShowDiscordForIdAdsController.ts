@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { ListDiscordForIdAdsService } from "../services/ListDiscordForIdAdsService";
+import { ShowDiscordForIdAdsService } from "../services/ShowDiscordForIdAdsService";
 
 
-class ListDiscordForIdAdsController {
+class ShowDiscordForIdAdsController {
   async handle(request: Request, response: Response) {
     const { id } = request.params;
 
-    const listDiscordForIdAdsService = new ListDiscordForIdAdsService();
+    const listDiscordForIdAdsService = new ShowDiscordForIdAdsService();
 
     const result = await listDiscordForIdAdsService.execute(id);
 
@@ -16,4 +16,4 @@ class ListDiscordForIdAdsController {
   }
 }
 
-export { ListDiscordForIdAdsController }
+export { ShowDiscordForIdAdsController }

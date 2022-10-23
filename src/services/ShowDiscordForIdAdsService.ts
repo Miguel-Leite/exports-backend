@@ -1,7 +1,7 @@
 import prisma from "../prisma"
 
 
-class ListDiscordForIdAdsService {
+class ShowDiscordForIdAdsService {
   async execute(id: string) {
 
     const ads = prisma.ad.findUnique({
@@ -18,4 +18,4 @@ class ListDiscordForIdAdsService {
   }
 }
 
-export { ListDiscordForIdAdsService };
+export { ShowDiscordForIdAdsService };
