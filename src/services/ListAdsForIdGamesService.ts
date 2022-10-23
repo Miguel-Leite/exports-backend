@@ -22,7 +22,12 @@ class ListAdsForIdGamesService {
       }
     });
 
-    return games;
+    return games.map(ad => {
+      return {
+        ...ad,
+        weekDay: ad.weekDay.split(',')
+      }
+    });
 
   }
 }
