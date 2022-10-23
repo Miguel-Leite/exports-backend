@@ -3,10 +3,22 @@ import prisma from "../prisma"
 
 class ListAdsForIdGamesService {
 
-  async execute(idGame: string) {
+  async execute(gameId: string) {
     const games = await prisma.ad.findMany({
+      select: {
+        id: true,
+        name: true,
+        weekDay: true,
+        useVoiceChannel: true,
+        yearsPlaying: true,
+        hourStart: true,
+        hourEnd: true,
+      },
       where: {
-        gameId: idGame
+        gameId
+      },
+      orderBy: {
+        created_at: 'desc'
       }
     });
 

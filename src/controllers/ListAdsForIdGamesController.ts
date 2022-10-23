@@ -6,10 +6,10 @@ class ListAdsForIdGamesController {
 
   async handle(request: Request, response: Response) {
     const { id } = request.params;
-
+    
     const listAdsForIdGamesService = new ListAdsForIdGamesService();
 
-    const result = listAdsForIdGamesService.execute(id)
+    const result = await listAdsForIdGamesService.execute(id)
 
     return response.json(result)
   }
