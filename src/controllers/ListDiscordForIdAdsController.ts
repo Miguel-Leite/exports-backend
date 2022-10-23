@@ -10,7 +10,9 @@ class ListDiscordForIdAdsController {
 
     const result = await listDiscordForIdAdsService.execute(id);
 
-    response.json(result)
+    response.json({
+      discord: result?.discord
+    })
   }
 }
 
