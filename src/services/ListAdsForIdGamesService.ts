@@ -1,4 +1,5 @@
 import prisma from "../prisma"
+import { convertMinutesToHourString } from "../utils/convert-minutes-to-hour-string";
 
 
 class ListAdsForIdGamesService {
@@ -25,7 +26,9 @@ class ListAdsForIdGamesService {
     return games.map(ad => {
       return {
         ...ad,
-        weekDay: ad.weekDay.split(',')
+        weekDay: ad.weekDay.split(','),
+        hourStart: convertMinutesToHourString(ad.hourStart),
+        hourEnd: convertMinutesToHourString(ad.hourEnd)
       }
     });
 
