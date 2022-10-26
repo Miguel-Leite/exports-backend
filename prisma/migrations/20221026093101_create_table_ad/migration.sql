@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "ads" (
+CREATE TABLE "Ad" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "gameId" TEXT NOT NULL,
     "name" TEXT NOT NULL,
@@ -10,5 +10,5 @@ CREATE TABLE "ads" (
     "hourEnd" INTEGER NOT NULL,
     "useVoiceChannel" BOOLEAN NOT NULL,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT "ads_gameId_fkey" FOREIGN KEY ("gameId") REFERENCES "games" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "Ad_gameId_fkey" FOREIGN KEY ("gameId") REFERENCES "Game" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );

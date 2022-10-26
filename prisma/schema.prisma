@@ -18,7 +18,7 @@ model Game {
 
   ads Ad[]
 
-  @@map("games")
+  // @@map("games")
 }
 
 model Ad {
@@ -35,5 +35,5 @@ model Ad {
 
   game Game @relation(fields: [gameId], references: [id])
 
-  @@map("ads")
+  // @@map("ads")
 }
