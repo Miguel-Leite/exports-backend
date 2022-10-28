@@ -32,8 +32,6 @@ class CreateAdsService {
         useVoiceChannel
       }
     })
-
-    console.log
   
     return ads;
 
